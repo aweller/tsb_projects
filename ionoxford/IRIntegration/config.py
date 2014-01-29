@@ -1,0 +1,20 @@
+api_config = {
+    'log_file':'IRIntegration.log',
+    'token':'Xdv5EdCVhVYbT2wtIKDqKB0y665Zez3B47vGtz0iIeVnOt29FKhO3cNCbp504l88oir2jWTmsWCu34nhHyQ2lg==',
+    'analysis_base_url':'https://ionreporter.iontorrent.com/ir16/rest/sample/getcontainers?containerName=',
+    'all_analysis_16_base_url':'https://ionreporter.iontorrent.com/ir16/rest/sample/getcontainers',
+    'variome_base_url':'https://ionreporter.iontorrent.com/ir16/rest/wsVerRest/exportVariomes?containerId=',
+    #'sample_base_url':'https://ionreporter.iontorrent.com/ir14/rest/sample/metadata?sampleName=',
+    #'analysis_base_url':'https://ionreporter.iontorrent.com/ir14/rest/sample/getcontainers?containerName=',
+    'all_analysis_14_base_url':'https://ionreporter.iontorrent.com/ir14/rest/sample/getcontainers',
+    #'variome_base_url':'https://ionreporter.iontorrent.com/ir14/rest/wsVerRest/exportVariomes?containerId=',
+    #'api_base_url':'https://ionreporter.lifetechnologies.com/api/v1/',
+    #'rest_base_url':'http://ionreporter.iontorrent.com/ir14/rest/api/',
+    #'rest_base_url':'https://ionreporter.lifetechnologies.com/irmgc/rest/api/',
+    'analysis_file':'analysis_file_ir16.csv',
+    #'analysis_file':'analysis_file.csv',
+    #'analysis_file':'analysis_file.csv',
+    #'sample_file':'sample_file.csv',
+    'output_path':'API_output_files/',
+    'analysis_summary_filename':'analysis_summary'
+}
