@@ -6,9 +6,10 @@
 # - how to give false-pos/neg likelihood? is there a value that might be translated to e.g. small/medium/high likelihood?
 # - function for natural language reporting
 
+import sys
+sys.path.append("/home/ionadmin/andreas/core/general/scripts")
 import variant_class as vc
 import parser_functions as parser
-import sys
 import os
     
 
@@ -43,7 +44,7 @@ def find_sample_pairs_to_run(foldername, compared_trait, output_dir):
         run_vcf_comparison(foldername, pair[0], pair[1], output_dir)    
 
 
-def run_all_similar_files_in_folder(foldername):                
+def run_all_similar_files_in_folder(foldername, output_dir):                
     
     """" Run all files in a folder if they have the same sample name """
     
@@ -52,7 +53,7 @@ def run_all_similar_files_in_folder(foldername):
     pairs = []
     
     for first in all_files:
-        run = first.split("_")[0]
+        run = first.split("_")[0] +"_"+first.split("_")[1]
         
         pair = [x for x in all_files if run in x]
         
@@ -61,14 +62,15 @@ def run_all_similar_files_in_folder(foldername):
         
         pair.sort()
         
-        if pair not in pairs:
+        if pair not in pairs and pair[0] != pair[1]:
             pairs.append(pair)
     
     #############################################################
     
     for pair in pairs:
-        print "#############################################"
-        run_vcf_comparison(foldername, pair[0], pair[1])  
+#         print "#############################################"
+        print pair
+        run_vcf_comparison(foldername, pair[0], pair[1], output_dir)  
 
 def run_whole_folder_in_fake_pairs(foldername):                
     
@@ -155,7 +157,8 @@ def main():
     output_dir = sys.argv[3]
 
 #     run_whole_folder_in_fake_pairs(foldername)
-    find_sample_pairs_to_run(foldername, compared_trait, output_dir)
+#     find_sample_pairs_to_run(foldername, compared_trait, output_dir)
+    run_all_similar_files_in_folder(foldername, output_dir)
 
 ##########################################################################################################################
 ##########################################################################################################################
